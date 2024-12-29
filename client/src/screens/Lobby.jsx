@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSocket } from "../context/SocketProvider";
+
 const Lobby = () => {
   const [email, setEmail] = useState("");
   const [room, setRoom] = useState("");
@@ -27,7 +28,7 @@ const Lobby = () => {
     return () => {
       socket.off("room:join", handlejoinroom);
     };
-  }, [socket, handlejoinroom]);``
+  }, [socket, handlejoinroom]);
 
   return (
     <div>
