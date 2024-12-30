@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
+import ReactPlayer from 'react-player'
 import { useSocket } from '../context/SocketProvider'
+import peer from "../service/peer.js"
 
 const Room = () => {
   const socket = useSocket()
@@ -32,6 +34,7 @@ const Room = () => {
         <h1>Room</h1>
         <h4>{remoteSocketId ? 'Connected':'No one in the room'}</h4>
         {remoteSocketId && <button onClick={handleCalllUser}>Call</button>}
+        {myStream && <ReactPlayer playing muted height="300px" width="500px" url={myStream}/>}
     </div>
   )
 }
