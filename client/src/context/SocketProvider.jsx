@@ -7,6 +7,7 @@ export const useSocket = ()=>{
 }
 const SocketProvider = (props) => {
   const socket = useMemo(() => io('https://meet-8snc.onrender.com'), [])
+  // http://localhost:8000
   return (
     <SocketContext.Provider value={socket}>
       {props.children}
